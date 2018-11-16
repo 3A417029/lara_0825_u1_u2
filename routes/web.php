@@ -51,12 +51,23 @@ Route::get('/', function () {
         'content' => 'updatecontent',
     ]);
     */
-    
+    /*
     $post = \App\Post::find(19);
     $post -> title='savedtitle';
     $post -> content='savedcontent';
     $post -> save();
-
+    */
+    /*    刪除    */
+    
+    /*  方法一
+    $post = \App\Post::find(20);
+    $post -> delete();   
+    */
+    /*  方法二
+    \App\Post::destroy(21);
+    */
+    /* 刪除多筆資料 */
+    \App\Post::destroy(18,19,22,23);
 });
 
 
