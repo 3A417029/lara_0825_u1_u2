@@ -13,6 +13,8 @@
 
 Route::get('/', function () {
     // return view('welcome');
+    
+    /*    新增    */
     /*
     \App\Post::create([
         'title'=>'testtitle',
@@ -27,6 +29,8 @@ Route::get('/', function () {
     $post -> save(); 
     */
 
+    /*    查詢    */
+
     /*  使用 all方法  */
     //$posts=\App\Post::all();
     //dd($posts);
@@ -36,9 +40,23 @@ Route::get('/', function () {
     //dd($post);
 
     /*  使用條件式    */
-    $posts = \App\Post::where('id','<',10) -> orderBy('id','DESC') -> get();
-    dd($posts);
-   
+    //$posts = \App\Post::where('id','<',10) -> orderBy('id','DESC') -> get();
+    //dd($posts);
+
+    /*    修改    */
+    /*
+    $posts = \App\Post::find(18);
+    $posts -> update([
+        'title' => 'updatetitle',
+        'content' => 'updatecontent',
+    ]);
+    */
+    
+    $post = \App\Post::find(19);
+    $post -> title='savedtitle';
+    $post -> content='savedcontent';
+    $post -> save();
+
 });
 
 
